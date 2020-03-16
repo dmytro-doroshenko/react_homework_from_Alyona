@@ -8,9 +8,10 @@ import { BtnMenu } from './components/BtnMenu/BtnMenu';
 import { PostsList } from './components/PostsList/PostsList';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import { Form } from './components/Form/Form';
+import { Input } from './components/Input/Input';
+import { SortingOptionsPanel } from './components/SortingOptionsPanel/SortingOptionsPanel';
 
 import './App.scss';
-import { Input } from './components/Input/Input';
 
 class App extends Component {
   constructor(props) {
@@ -70,6 +71,7 @@ class App extends Component {
                   <div className={`App ${value}`}>
                     <Header/>
 
+                    {/* todo: перенести этот JSX в файл components/SortingOptionsPanel/SortingOptionsPanel.js */}
                     <div className="sorting-options d-flex justify-items-center align-items-center">
                       <label className="custom-label">Sorting options:</label>
                       <BtnMenu
@@ -89,6 +91,11 @@ class App extends Component {
                         sortingTypes.BY_DATE
                       )}
                     </div>
+                    {/* todo: перенести этот JSX в файл components/SortingOptionsPanel/SortingOptionsPanel.js (конец)*/}
+
+                    {/* todo: проверить что импорт и использование SortingOptionsPanel не ламает функционала*/}
+                    <SortingOptionsPanel/>
+                    {/* todo: проверить что импорт и использование SortingOptionsPanel не ламает функционала */}
 
                     <div className="d-flex">
                       <div>
