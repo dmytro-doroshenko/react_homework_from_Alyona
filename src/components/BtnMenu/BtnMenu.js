@@ -6,6 +6,8 @@ import './BtnMenu.scss';
 const CN = 'btn-menu'; // todo: Обратите внимание, это главный оберточный класс для этой компоненты
 
 export const BtnMenu = props => {
+  // Task 3
+//   todo: достать из props пропертю selectedSortType которая прилетит из SortingOptionsPanel
   const { options, onSortingChange } = props;
   const [isOpenChange, setIsOpenChange] = useState(false);
 
@@ -24,8 +26,9 @@ export const BtnMenu = props => {
       <Button className="buttonMenu custom-select" onClick={toggleMenu} label="sort"/>
       <ul className="change-menu list-group">
         {isOpenChange && !!options.length && options.map(item => {
+          // todo: добавить класс active если item равно выбраному в текущий момент виду сортировки (selectedSortType)
             return (
-              <li key={item} id={item} className="list-group-item" onClick={onLabelClick}>
+              <li key={item} id={item} className={`list-group-item`} onClick={onLabelClick}>
                 {sortingTitle[item]}
               </li>
             );

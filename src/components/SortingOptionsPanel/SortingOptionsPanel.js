@@ -1,6 +1,6 @@
 import React from 'react';
-
-// todo: создать здесь функциональную компоненту SortingOptionsPanel
+  // Task 1
+//    todo: создать здесь функциональную компоненту SortingOptionsPanel
 //     она должна возвращать JSX из файла App.js строки 74-92
 //     сделать импорт константы sortingTypes
 //     сделать импорт компоненты BtnMenu
@@ -8,6 +8,9 @@ import React from 'react';
 //     обвернуть возвращаемый JSX в SortingContext.Consumer таким образом что будут доступны данные из контекста
 //     const { sortType, onSortingChange, posts, addPost } = sortConfig; по аналогии с App.js строка 59
 //     перенести функцию renderButton в эту компоненту
+
+// Task 3
+//   todo: достать из SortingContext переменную sortType и передать ее как props под названием selectedSortType в компоненту BtnMenu
 
 export const SortingOptionsPanel = () => {
   return (
