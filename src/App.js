@@ -102,7 +102,7 @@ class App extends Component {
                         <Button label="HIDE POST!" onClick={this.hidePost}/>
                         {/* todo: добавить в props PostsList пропертю selectedPostId */}
                         {/* todo: в selectedPostId  положить selectedPostId из стейта (объявлено в строке 61) */}
-                        <PostsList selectedPostId={selectedPostId} posts={posts} onPostSelect={this.onPostSelect}/>
+                        <PostsList posts={posts} onPostSelect={this.onPostSelect}/>
                       </div>
                       <ErrorBoundary>
                         {!this.state.isPostHidden &&
