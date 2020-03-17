@@ -10,6 +10,7 @@ import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import { Form } from './components/Form/Form';
 import { Input } from './components/Input/Input';
 import { SortingOptionsPanel } from './components/SortingOptionsPanel/SortingOptionsPanel';
+import AddUserForm from './components/AddUserForm/AddUserForm';
 
 import './App.scss';
 
@@ -19,7 +20,8 @@ class App extends Component {
     this.state = {
       inputValue: '',
       selectedPostId: allPosts[0].id,
-      isPostHidden: false
+      isPostHidden: false,
+      usersList: []
     };
   }
 
@@ -34,6 +36,14 @@ class App extends Component {
       ...this.state,
       inputValue: value
     });
+  };
+
+  addUser = (newUser) => {
+    const { usersList } = this.state;
+
+    this.setState({
+      usersList: [...usersList, newUser]
+    })
   };
 
   renderButton = (label, sortType, onClick, sortCondition) => {
@@ -122,6 +132,16 @@ class App extends Component {
                       <p>{this.state.inputValue}</p>
                     </div>
 
+
+                    <div>
+                      {
+                        this.state.usersList.map((user) => {
+                          return <div key={user.id}>{`${user.name} ${user.lastName}`}</div>
+                        })
+                      }
+                    </div>
+                    <AddUserForm addUser={this.addUser}/>
+
                     <UserContext.Consumer>
                       {({ user }) => (
                         <Form
@@ -132,13 +152,13 @@ class App extends Component {
                       )}
                     </UserContext.Consumer>
                     <div className="all-posts">
-                      {
-                        posts.map((post) => {
-                          return (
-                            <Post post={post} key={post.id}/>
-                          );
-                        })
-                      }
+                      {/*{*/}
+                      {/*  posts.map((post) => {*/}
+                      {/*    return (*/}
+                      {/*      <Post post={post} key={post.id}/>*/}
+                      {/*    );*/}
+                      {/*  })*/}
+                      {/*}*/}
                     </div>
                   </div>
                 );
